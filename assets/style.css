@@ -1,0 +1,28 @@
+.container {
+    height: 900px;
+    width: 600px;
+}
+.gifbuttons {
+    float: left;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    height: 130px;
+    border:solid;
+    border-color: black;
+}
+.gifregion {
+    float: left;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    border: solid;
+    border-color: blue;
+}
+.inputregion {
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    border: solid;
+    border-color: red;
+}

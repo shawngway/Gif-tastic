@@ -1,4 +1,4 @@
-var games = ["Metal Gear Solid", "Halo 2", "World of Warcraft", "Journey", "Dota 2", "Mega Man"]
+var games = ["Metal Gear Solid", "Halo 2", "World of Warcraft", "Mario kart", "Dota 2", "Mega Man"]
 function renderButtons() {
     $("#buttons-view").empty();
     for (var i = 0; i < games.length; i++) {
@@ -9,6 +9,7 @@ function renderButtons() {
         $("#buttons-view").append(a);
     }
 }
+//find better avenue to use click, new buttons not on dom
 $("#add-game").on("click", function (event) {
     event.preventDefault();
 
@@ -23,7 +24,7 @@ $("#add-game").on("click", function (event) {
 });
 renderButtons();
 
-$("#button").on("click", function () {
+$("button").on("click", function () {
     $("#game-gif").empty();
     var game = $(this).attr("data-name");
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + game + "&api_key=Rldx2nLfvDVSqdK8KgeIHSDn3MYjyH2Q&limit=10"
@@ -38,9 +39,11 @@ $("#button").on("click", function () {
             var gameDiv = $("<div>");
             var p = $("<p>").text("Rating: " + results[i].rating);
             var gameImage = $("<img>");
-            //may need to work url to form giphy
-            gameImage.attr("src", results[i].images.fixed_height.url);
-            
+            //may need to work url to form giphy currently showing still image need to be able to flip between from click
+            gameImage.attr("src", results[i].images.fixed_height_still.url);
+            gameDiv.append(p);
+            gameDiv.append(gameImage);
+            $("#game-gif").prepend(gameDiv);
         }
     })
 })

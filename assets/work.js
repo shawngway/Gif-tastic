@@ -42,7 +42,7 @@ function gifCreation() {
                 //may need to work url to form giphy currently showing still image need to be able to flip between from click
                 gameImage.attr("src", results[i].images.fixed_height_still.url)
                 .attr("data-still", results[i].images.fixed_height_still.url)
-                .attr("data-animate", results[i].images.fixed_height_small)
+                .attr("data-animate", results[i].images.fixed_height.url)
                 .attr("data-state", "still");
 
                 gameDiv.append(p);
